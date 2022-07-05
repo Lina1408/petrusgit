@@ -18,7 +18,7 @@ def fast_approx_ln(x,n):
         g_0 = sqrt(a_0 + g_0) # här produceras a_0+i, vilket heter a_0
         A[0,i]=a_0 # lägg till a_i på plats i 
         
-        for k in range(1,n+1): # för elementen i första raden av A
+        for k in range(1,n+1):
             d=(((a_0+g_0)/2)-(4**-k)*a_0)/1-4**-k
             A[i,k]=d # lägger till d
     
