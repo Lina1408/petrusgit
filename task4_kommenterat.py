@@ -21,4 +21,16 @@ def fast_approx_ln(x,n):
         for k in range(1,n):
             A[i,k]=(A[k-1,i]-((4**-k)*A[k-1,i-1]))/(1-(4**-k))
     
-    return (x-1)/A[n-1,n-1] ####
+    return (x-1)/A[n-1,n-1]
+
+x = arange(-50.0, 50.0, 0.1)
+y = arange(0,100.0, 0.1)
+
+x = linspace(0.1, 20, 200)
+y = []
+for i in x:
+    y.append(fast_approx_ln(i, 2))
+
+plot(x,y, color="green")
+yscale('symlog')
+show()
