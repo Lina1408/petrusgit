@@ -19,7 +19,7 @@ def fast_approx_ln(x,n):
         A[0,i]=a_0 # lägg till a_i på plats i 
         
         for k in range(1,n+1):
-            d=(((a_0+g_0)/2)-(4**-k)*a_0)/1-4**-k
+            d=(A[i-1,k]-(4**-k)*A[i-1,k-1])/1-4**-k
             A[i,k]=d # lägger till d
     
     return (x-1)/A[n,n]
